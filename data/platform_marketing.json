@@ -1,0 +1,114 @@
+{
+  "Platform": [
+    {
+      "id": 0,
+      "name": "PetroTimes",
+      "type": "news",
+      "estimated": 100,
+      "cost": 200,
+      "confirmed": false,
+      "email": "petrotimes@petro.org",
+      "phone": 8453381429,
+      "website": "petro.org"
+    },
+    {
+      "id": 1,
+      "name": "FaceBook",
+      "type": "social",
+      "estimated": 1000,
+      "cost": 1000,
+      "confirmed": false,
+      "email": "fb@fb.com",
+      "phone": 1234567890,
+      "website": "fb.com"
+    },
+    {
+      "id": 2,
+      "name": "YouTube",
+      "type": "social",
+      "estimated": 500,
+      "cost": 1000,
+      "confirmed": false,
+      "email": "johnsmith@org.om",
+      "phone": 1456789532,
+      "website": "you.tube"
+    },
+    {
+      "id": 3,
+      "name": "John Smith",
+      "type": "influencer",
+      "estimated": 200,
+      "cost": 1000,
+      "confirmed": false,
+      "email": "johns@gmail.com",
+      "phone": 1456235489,
+      "website": "johns.com"
+    },
+    {
+      "id": 4,
+      "name": "Instagram",
+      "type": "social",
+      "estimated": 300,
+      "cost": 10000,
+      "confirmed": false,
+      "email": "instagram@insta.com",
+      "phone": 1453278954,
+      "website": "insta.com"
+    },
+    {
+      "id": 5,
+      "name": "Elon Mark",
+      "type": "influencer",
+      "estimated": 5000,
+      "cost": 1200,
+      "confirmed": false,
+      "email": "elon.mark@mail.us",
+      "phone": 2453187923,
+      "website": "elonmark.net"
+    },
+    {
+      "id": 6,
+      "name": "Pinterest",
+      "type": "social",
+      "estimated": 1000,
+      "cost": 2400,
+      "confirmed": false,
+      "email": "pin@pinterest.net",
+      "phone": 1564782354,
+      "website": "pinterest.net"
+    },
+    {
+      "id": 7,
+      "name": "Zalo",
+      "type": "social",
+      "estimated": 1500,
+      "cost": 2000,
+      "confirmed": false,
+      "email": "zalo@zalo.vn",
+      "phone": 8456325689,
+      "website": "zalo.vn"
+    },
+    {
+      "id": 8,
+      "name": "Global Times",
+      "type": "news",
+      "estimated": 2000,
+      "cost": 5000,
+      "confirmed": false,
+      "email": "glob@globtime.org",
+      "phone": 2456879856,
+      "website": "globtime.org"
+    },
+    {
+      "id": 9,
+      "name": "Alan Phan",
+      "type": "influencer",
+      "estimated": 100,
+      "cost": 500,
+      "confirmed": false,
+      "email": "aphan@hotmail.com",
+      "phone": 2345687924,
+      "website": "alanp.net"
+    }
+  ]
+}
