@@ -35,10 +35,24 @@ class QueryInvestor(object):
     def query_investor_by_famous(self):
 
         return sorted(self.data, key=lambda invt: invt['famous_ratio'], reverse=True)[:3]
-        
+
+    def query_investor_by_email(self):
+        email_investor = []
+        for i in range(len(self.data)):
+            email_investor.append(self.data[i]["email"])
+        return  email_investor
+    
+    def query_investor_join(self):
+        investior_join = []
+        for i in range(len(self.data)):
+            if self.data[i]["is_join"]:
+                investior_join.append(self.data[i])
+        return investior_join
+
+
 if __name__ == "__main__":
     query =  QueryInvestor()
     # name_investor = query.query_investor("modern realty")
-    name_investor = query.query_investor_by_famous()
+    name_investor = query.query_investor_join()
     print(name_investor)
 
