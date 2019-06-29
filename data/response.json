@@ -1,0 +1,23 @@
+{
+    "response":{
+        "greetings":[
+            "Chào bạn, mình là bot hỗ trợ về đặt vé máy bay",
+            "Mình có thể giúp gì được cho bạn?"
+        ],
+        "add_info":[
+            "You've add",
+            "Successfully add"
+        ],
+        "joking":[
+            "Tình yêu như 2 đứa cùng ngậm sợi dây chun. Đứa này thả, đứa kia vỡ mồm.",
+            "Đời thật ngắn ngủi cớ sao phải buồn",
+            "Từ khi quen em anh đã biết bối rối ... Vì những lúc thoáng nghe em cười",
+            "Tiền không mua được tất cả, nhưng không có tiền là vất vả. Thế thôi"
+        ],
+        "get_ticket":[
+            "Mời bạn xem thông tin và vé mà bạn đã đặt",
+            "Mời bạn kiểm tra lại thông tin và vé",
+            "Mời bạn xem kỹ lại thông và vé để tránh điều đáng tiếc"
+        ]
+    }
+}

@@ -10,38 +10,11 @@ class BtcRequest(object):
         self.end_date = None
         self.list_place = None
 
-    def get_any_null_item(self):
-        temp = []
-        if self.event_name is None:
-            temp.append("Tên ")
-        if self.btc is None:
-            temp.append("Số điện thoại")
-        if self.investor is None:
-            temp.append("Kinh phí")
-        if self.start_date is None:
-            temp.append("Nơi đang ở")
-        if self.end_date is None:
-            temp.append("Nơi đến")
-        if self.str_date is None:
-            temp.append("Ngày đi")
-
-        return temp
 
     def update_all_information(self, var):
         for key, value in var.items():
             setattr(self, key, value)
 
-    @property
-    def get_user_request(self):
-        result = {
-            "event_name": self.event_name,
-            "btc": self.btc,
-            "investor": self.investor,
-            "start_date": self.start_date,
-            "end_date": self.end_date,
-            "list_place": self.list_place
-        }
-        return json.dumps(result)
 
     @property
     def get_str_date(self):

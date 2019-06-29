@@ -1,0 +1,31 @@
+{
+  "dialog_create_btc": [
+    {"sent_mail": ["content", "btc"]},
+    {"add_info": true},
+    {"sent_mail": "appointment"},
+    {"query_investor_intent": true}
+  ],
+  "dialog_investor": [
+    {"query_investor_intent": true},
+    {"sent_mail": "appointment"},
+    {"add_info":  true},
+    {"sent_mail":  ["appointment", "investor and btc"]},
+    {"sent_mail": "content"}
+  ],
+  "dialog_member": [
+    {"query_location_intent": true},
+    {"sent_mail":  ["content", "btc"]},
+    {"sent_mail": ["content", "place"]},
+    {"add_info": true},
+    {"sent_mail": "reminder"},
+    {"sent_mail": ["content", "btc"]}
+  ],
+  "dialog_place": [
+    {"query_platform_intent": true},
+    {"sent_mail": ["content", "btc"]},
+    {"sent_mail": "appointment"},
+    {"add_info": true},
+    {"sent_mail": true},
+    {"sent_mail": "reminder"}
+  ]
+}
