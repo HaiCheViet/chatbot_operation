@@ -1,0 +1,84 @@
+{
+    "Place": [
+        {
+            "id": 1,
+            "name": "Toong Coworking Space",
+            "cost": "$1500",
+            "area": "700",
+            "services": 4,
+            "location": {
+                "address": "2800 Victory Blvd, Staten Island",
+                "state": "New York, United States"
+            },
+            "capability": "100",
+            "parking slots": "1000 cars",
+            "working time": "8am-9pm",
+            "certificate": false,
+            "chosen": false
+        },
+        {
+            "id": 2,
+            "name": "CUNY College of Staten Island",
+            "cost": "$1000",
+            "area": "500",
+            "services": 3,
+            "location": {
+                "address": "2040 Forest Ave, Staten Island",
+                "state": "New York, United States"
+            },
+            "capability": "70",
+            "parking slots": "700 cars",
+            "working time": "24h",
+            "certificate": false,
+            "chosen": false
+        },
+        {
+            "id": 3,
+            "name": "Unami Park",
+            "cost": "$1000",
+            "area": "1000",
+            "services": 2,
+            "location": {
+                "address": "Garwood",
+                "state": "New Jersey, United States"
+            },
+            "capability": "300",
+            "parking slots": "1000 cars",
+            "working time": "9am-5pm",
+            "certificate": false,
+            "chosen": false
+        },
+        {
+            "id": 4,
+            "name": "West Mesquite High School",
+            "cost": "$1200",
+            "area": "800",
+            "services": 3.5,
+            "location": {
+                "address": "2500 Memorial Blvd, Mesquite",
+                "state": "Texas, United States"
+            },
+            "capability": "500",
+            "parking slots": "800 cars",
+            "working time": "9am-5pm",
+            "certificate": false,
+            "chosen": false
+        },
+        {
+            "id": 5,
+            "name": "Carnegie Mellon University",
+            "cost": "$2500",
+            "area": "1200",
+            "services": 4.7,
+            "location": {
+                "address": "5000 Forbes Ave, Pittsburgh",
+                "state": "Pennsylvania, United States"
+            },
+            "capability": "800",
+            "parking slots": "1800 cars",
+            "working time": "9am-6pm",
+            "certificate": false,
+            "chosen": false
+        }
+    ]
+}
