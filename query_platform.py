@@ -11,7 +11,7 @@ class QueryPlatform(object):
             data = json.load(f)['Platform']
             return data
 
-    def get_by_names(self, names, sort_by=None, desc=True, top_k=5):
+    def get_by_names(self, names, sort_by=None, desc=True, top_k=None):
         tmp = []
         if isinstance(names, str):
             names = [names]
@@ -22,7 +22,7 @@ class QueryPlatform(object):
             tmp = sorted(tmp, key=lambda it: it[sort_by], reverse=desc)
         return tmp[0:top_k]
 
-    def get_by_cost_range(self, min_cost, max_cost, sort_by=None, desc=True, top_k=5):
+    def get_by_cost_range(self, min_cost, max_cost, sort_by=None, desc=True, top_k=None):
         tmp = []
         for item in self.data:
             if min_cost <= item['cost'] <= max_cost:
@@ -42,7 +42,7 @@ class QueryPlatform(object):
             tmp = sorted(tmp, key=lambda it: it[sort_by], reverse=desc)
         return tmp[0:top_k]
 
-    def get_by_estimated_range(self, min_eta, max_eta, sort_by=None, desc=True, top_k=5):
+    def get_by_estimated_range(self, min_eta, max_eta, sort_by=None, desc=True, top_k=None):
         tmp = []
         for item in self.data:
             if min_eta <= item['estimated'] <= max_eta:
@@ -51,7 +51,7 @@ class QueryPlatform(object):
             tmp = sorted(tmp, key=lambda it: it[sort_by], reverse=desc)
         return tmp[:top_k]
 
-    def get_confirmed(self, sort_by=None, desc=True, top_k=5):
+    def get_confirmed(self, sort_by=None, desc=True, top_k=None):
         tmp = [item for item in self.data if item['confirmed']]
         if sort_by:
             tmp = sorted(tmp, key=lambda it: it[sort_by], reverse=desc)
