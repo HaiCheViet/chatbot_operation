@@ -6,7 +6,9 @@
         ],
         "add_info":[
             "You've add",
-            "Successfully add"
+            "Successfully add",
+            "Add {name} successfully!",
+            "Added {name} to {group}"
         ],
         "joking":[
             "Tình yêu như 2 đứa cùng ngậm sợi dây chun. Đứa này thả, đứa kia vỡ mồm.",
@@ -18,6 +20,29 @@
             "Mời bạn xem thông tin và vé mà bạn đã đặt",
             "Mời bạn kiểm tra lại thông tin và vé",
             "Mời bạn xem kỹ lại thông và vé để tránh điều đáng tiếc"
+        ],
+        "choose_place_follow_up":[
+            "Done.",
+            "Chosen {place}.",
+            "I've added {place} to the list."
+        ],
+        "get_daytime_send_mail_follow_up":[
+            "I've set the appointment.",
+            "I've added the appointment to calendar."
+        ],
+        "query_investor_intent":[
+            "Bellow is what I've queried: ",
+            "Result list: "
+        ],
+        "query_place_intent":[
+            "Here are places that match the query: ",
+            "Query Result: ",
+            "Here's your query: "
+        ],
+        "send_mail":[
+            "I've send mail to {person}.",
+            "I've send mail for {typeofmail}.",
+            "Email was send."
         ]
     }
 }
