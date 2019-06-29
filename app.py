@@ -1,4 +1,5 @@
 from pprint import pprint
+from swtich_intent import HandleIntent
 
 from flask import Flask, request, make_response, jsonify
 
@@ -20,16 +21,17 @@ def webhook():
     # get action from json
     # action = req.get('queryResult').get('action')
     intent = req.get('queryResult').get('intent')["displayName"]
+    para = req.get('queryResult').get('para')
     # intent = req.get('intent').get('query_investor_intent')
     # print(req)
     pprint(req)
     print(intent)
 
     list_sequence.append(intent)
-    if intent == "query_investor_intent"
-        return
 
-    resp = {"fulfillmentText": "hello"}
+    handle_intent = HandleIntent(intent, para)
+
+    resp = {"fulfillmentText": f"{handle_intent.switch_intent()}"}
     return make_response(jsonify(resp))
     # print(intent)
 

@@ -2,6 +2,7 @@ import json
 from random import shuffle
 
 from query_answer import *
+from send_mail import *
 
 
 class HandleIntent(object):
@@ -26,4 +27,18 @@ class HandleIntent(object):
             return handle_mess_invest()
         elif self.intent == "add_info":
             return self.handle_info()
-        elif self.intent == ""
+        elif self.intent == "send_email":
+            if self.para["rule"] == "content":
+                if self.para["typeofperson"] == "member":
+                    return send_content("test", ["cheviethai123@gmail.com"])
+                elif self.para["typeofperson"] == "investor":
+                    return send_content("test", handle_mess_invest(self.para))
+            elif self.para["rule"] == "appointment":
+                if self.para["typeofperson"] == "member":
+                    send_invitation("test", ["cheviethai123@gmail.com"])
+                elif self.para["typeofperson"] == "investor":
+                    return send_invitation("test", handle_mess_invest(self.para))
+
+            else:
+                return "haven't develop"
+
