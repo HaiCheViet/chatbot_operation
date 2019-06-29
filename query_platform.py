@@ -51,6 +51,13 @@ class QueryPlatform(object):
             tmp = sorted(tmp, key=lambda it: it[sort_by], reverse=desc)
         return tmp[:top_k]
 
+    def get_confirmed(self, sort_by=None, desc=True, top_k=5):
+        tmp = [item for item in self.data if item['confirmed']]
+        if sort_by:
+            tmp = sorted(tmp, key=lambda it: it[sort_by], reverse=desc)
+        return tmp[:top_k]
+
+
 
 if __name__ == "__main__":
     queryp = QueryPlatform()
@@ -58,5 +65,7 @@ if __name__ == "__main__":
     # res = queryp.get_by_names(['FaceBook', 'YouTube'], sort_by='estimated', desc=False)
     # res = queryp.get_by_cost_range(0, 1000, 'cost', False, 5)
     # res = queryp.get_by_types(['social', 'news'], sort_by='estimated', desc=False, top_k=None)
-    res = queryp.get_by_estimated_range(200, 1000, sort_by='cost', desc=False, top_k=5)
+    # res = queryp.get_by_estimated_range(200, 1000, sort_by='cost', desc=False, top_k=5)
+    res = queryp.get_confirmed()
     print(res)
+
