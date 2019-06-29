@@ -3,11 +3,11 @@ from query.query_place import QueryPlace
 
 def handle_mess_invest(para):
     query = QueryInvestor()
-    if para["query_investor"] == "info":
+    if para["rule"] == "info":
         return query.query_investor_by_name(para["organizer"])
-    elif para["query_investor"] == "amount":
+    elif para["rule"] == "amount":
         return query.query_investor_by_budget()
-    elif para["query_investor"] == "rank":
+    elif para["rule"] == "rank":
         return query.query_investor_by_famous()
     else:
         return "Entity was not defined"

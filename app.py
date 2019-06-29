@@ -1,6 +1,8 @@
 from pprint import pprint
 
 import response
+import query_answer
+import switch_intent
 from flask import Flask, request, make_response, jsonify
 
 app = Flask(__name__)
@@ -63,14 +65,36 @@ def webhook():
             pass
 
     elif action == 'add_info_investor':
-    
+        # add to database
+        # reply done
         pass
-    elif action == '':
+
+    elif action == 'add_info_member':
+        # add to database
+        # reply done
+        
+
         pass
-    elif action == '':
-        pass
-    elif action == '':
-        pass
+
+    elif action == 'show_investor':
+        from query.query_investor import QueryInvestor
+        if para['rule'] == 'rank':
+            # show investor by rank
+            mess = query.query_investor_by_famous()
+            
+        elif para['rule'] == 'amount':
+            # show investor by amount
+            mess = query.query_investor_by_budget()
+            
+        elif para['rule'] == 'info' and para['organizer'] != '' :
+            # show info investor
+            mess = query.query_investor_by_name(para["organizer"])
+            
+        else:
+            # reply: what do you want to show?
+            mess = {}
+    elif action == 'show_place':
+        mess = query_answer.handle_mess_place()
     
 
     pprint(req)
