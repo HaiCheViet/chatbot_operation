@@ -4,11 +4,12 @@
             "id": 1,
             "name": "Toong Coworking Space",
             "cost": 1500,
+            "email": "toongcoworkingspace@gmail.com",
             "area": 700,
             "services": 4,
             "location": {
-                "address": "2800 Victory Blvd, Staten Island",
-                "state": "New York, United States"
+                "address": "126 Nguyen Thi Minh Khai, phuong 6, quan 3",
+                "state": "Ho Chi Minh"
             },
             "capability": 100,
             "parking slots": "1000 cars",
@@ -18,13 +19,14 @@
         },
         {
             "id": 2,
-            "name": "CUNY College of Staten Island",
+            "name": "Elite Coworking space",
             "cost": 1000,
+            "email": "elitecoworkingspace@mail.com",
             "area": 500,
             "services": 3,
             "location": {
-                "address": "2040 Forest Ave, Staten Island",
-                "state": "New York, United States"
+                "address": "23 duong 44, phuong Thao Dien, quan 2",
+                "state": "Ho Chi Minh"
             },
             "capability": 70,
             "parking slots": "700 cars",
@@ -34,13 +36,14 @@
         },
         {
             "id": 3,
-            "name": "Unami Park",
+            "name": "Work Saigon coworking space",
             "cost": 1000,
+            "email": "worksaigoncoworkingspace@abc.com",
             "area": 700,
             "services": 2,
             "location": {
-                "address": "Garwood",
-                "state": "New Jersey, United States"
+                "address": "267/2 Dien Bien Phu, quan 3",
+                "state": "Ho Chi Minh"
             },
             "capability": 300,
             "parking slots": "1000 cars",
@@ -50,13 +53,14 @@
         },
         {
             "id": 4,
-            "name": "West Mesquite High School",
+            "name": "Start Saigon",
             "cost": 1200,
+            "email": "startsaigon@xyz.com",
             "area": 800,
             "services": 3.5,
             "location": {
-                "address": "2500 Memorial Blvd, Mesquite",
-                "state": "Texas, United States"
+                "address": "18 Bis/14 Nguyen Thi Minh Khai, quan 1",
+                "state": "Ho Chi Minh"
             },
             "capability": 500,
             "parking slots": "800 cars",
@@ -66,17 +70,103 @@
         },
         {
             "id": 5,
-            "name": "Carnegie Mellon University",
+            "name": "Sunshine park",
             "cost": 2500,
+            "email": "sunshinepark@gmail.com",
             "area": 1200,
             "services": 4.7,
             "location": {
-                "address": "5000 Forbes Ave, Pittsburgh",
-                "state": "Pennsylvania, United States"
+                "address": "12/3 Hang Ma, quan Hoan Kiem",
+                "state": "Ha Noi"
             },
             "capability": 800,
             "parking slots": "1800 cars",
             "working time": "9am-6pm",
+            "certificate": false,
+            "chosen": false
+        },
+        {
+            "id": 6,
+            "name": "Riverside building",
+            "cost": 2100,
+            "email": "riversidebuilding@gmail.com",
+            "area": 1600,
+            "services": 4.5,
+            "location": {
+                "address": "40 Le Loi, phuong 3",
+                "state": "Thua Thien Hue"
+            },
+            "capability": 500,
+            "parking slots": "1000 cars",
+            "working time": "24h",
+            "certificate": false,
+            "chosen": false
+        },
+        {
+            "id": 7,
+            "name": "DaNang highland",
+            "cost": 1800,
+            "email": "dananghighland@gmail.com",
+            "area": 800,
+            "services": 4,
+            "location": {
+                "address": "20 Hoang Hoa Tham, Hai Chau",
+                "state": "Da Nang"
+            },
+            "capability": 400,
+            "parking slots": "800 cars",
+            "working time": "8am-5pm",
+            "certificate": false,
+            "chosen": false
+        },
+        {
+            "id": 8,
+            "name": "Oversea coworking space",
+            "cost": 2000,
+            "email": "overseacs@gmail.com",
+            "area": 1800,
+            "services": 4,
+            "location": {
+                "address": "68 Hoang Van Thai, Hoa Minh, Lien Chieu",
+                "state": "Da Nang"
+            },
+            "capability": 1000,
+            "parking slots": "2000 cars",
+            "working time": "9am-9pm",
+            "certificate": false,
+            "chosen": false
+        },
+        {
+            "id": 9,
+            "name": "Bright Future building",
+            "cost": 2500,
+            "email": "brightfuture@gmail.com",
+            "area": 1500,
+            "services": 4.5,
+            "location": {
+                "address": "117 Tran Duy Hung, Trung Hoa, Cau Giay",
+                "state": "Ha Noi"
+            },
+            "capability": 1000,
+            "parking slots": "1200 cars",
+            "working time": "8am-6pm",
+            "certificate": false,
+            "chosen": false
+        },
+        {
+            "id": 10,
+            "name": "Crystal Palace",
+            "cost": 1800,
+            "email": "crystalpalace@gmail.com",
+            "area": 700,
+            "services": 3.5,
+            "location": {
+                "address": "40 Dao Tan, Truong An",
+                "state": "Thua Thien Hue"
+            },
+            "capability": 400,
+            "parking slots": "800 cars",
+            "working time": "9am-4pm",
             "certificate": false,
             "chosen": false
         }
