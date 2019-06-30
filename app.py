@@ -1,8 +1,9 @@
 from pprint import pprint
 
+import random
 import response
 import query_answer
-import switch_intent
+from switch_intent import HandleIntent
 from flask import Flask, request, make_response, jsonify
 from query.query_investor import QueryInvestor
 
@@ -39,17 +40,37 @@ def webhook():
     
     elif action == 'send_mail':
         '''
-        @para:  typeofperson: [member, investor]
+        @para:  typeofperson: [member, investor, council]
                 rule: [content, appointment, reminder]
                 (mail): mail
         '''
-        if para['mail'] != '':
-            # send mail to one person
+        # handle_intent = HandleIntent(intent, para)
+        # if para['rule'] == 'content':
+        #     if para['typeofperson'] == 'council':
+        #         # send mail to a person or people of member group
+        #         result = handle.send_mail(rule=para['content'], 
+        #                         typeofperson=para['typeofperson'], mail=para['mail'])
+        #         if result:
+        #             text = handle.select_response('send_mail')
+        #             reply = slack.text_response(text)
+        #         else: reply = slack.text_response("I missed it")
 
-            pass
+        #     elif para['typeofperson'] == 'investor':
+        #         # send mail to a person or people of member group
+        
+        result = handle.send_mail(*para)
+        if result:
+            text = handle.select_response('send_mail')
+            reply = slack.text_response(text)
+        else: reply = slack.text_response("I missed it")
+                       
+            
+
+
         else:
+            text = handle_intent.switch_intent()
+            reply = slack.text_response(text)
             # send mail to a group
-            pass
 
     elif action == 'add_info':
         '''

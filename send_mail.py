@@ -14,12 +14,10 @@ organizer = "ORGANIZER;CN=organiser:mailto:first" + CRLF + " @gmail.com"
 fro = "haitest che <chehaitest@gmail.com>"
 
 
-def send_invitation(target_mem):
+def send_invitation(ddtstart, dtoff, target_mem):
     # ddtstart = datetime.datetime.now()
     # dtoff = datetime.timedelta(days=1)
-    ddtstart = datetime.datetime.now()
-    dtoff = datetime.timedelta(days = 1)
-    dur = datetime.timedelta(hours = 1)
+    dur = datetime.timedelta(hours=1)
     ddtstart = ddtstart + dtoff
     dtend = ddtstart + dur
     dtstamp = datetime.datetime.now().strftime("%Y%m%dT%H%M%SZ")
