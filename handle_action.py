@@ -38,7 +38,6 @@ class HandleAction(object):
 
     def send_mail(self):
 
-
         if self.para["rule"] == "content":
             if self.para["typeofperson"] == "member":
                 return send_content("test", ["cheviethai123@gmail.com"])
