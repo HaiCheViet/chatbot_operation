@@ -1,1 +1,104 @@
-{"Investor": [{"id": 1, "name": "Modern Realty", "email": "Dungphamvan0803@gmail.com", "investor_budget": null, "phone": "512-366-2202", "size": 100, "history_investment": [{"event": "Sun Flower", "budget": 1500}, {"event": "Color Me Run", "budget": 1000}], "famous_ratio": 5, "is_join": false}, {"id": 2, "name": "Pham Van Dung", "email": "IsidroMFuller@armyspy.com", "investor_budget": null, "phone": "580-564-1953", "size": 150, "history_investment": [{"event": "Run Fast", "budget": 2000}, {"event": "Fast and Furious", "budget": 3000}], "famous_ratio": 6, "is_join": true}, {"id": 3, "name": "Thorofare", "email": "DanielACoronado@teleworm.us", "investor_budget": null, "phone": "312-496-4196", "size": 500, "history_investment": [{"event": "Learn Smart", "budget": 1500}, {"event": "Hello Daddy", "budget": 5000}, {"event": "Investment Intelligence", "budget": 2000}], "famous_ratio": 8, "is_join": false}, {"id": 4, "name": "Mr. Steak", "email": "FilomenaAMay@rhyta.com", "investor_budget": null, "phone": "703-388-6660", "size": 100, "history_investment": [{"event": "Mastery Trainer Training", "budget": 2000}], "famous_ratio": 6, "is_join": false}, {"id": 5, "name": "Star Assistance", "email": "MatthewPJones@teleworm.us", "investor_budget": null, "phone": "847-643-8876", "size": 500, "history_investment": [{"event": "True Love", "budget": 3000}, {"event": "Met and Greet Dinner Social", "budget": 2500}], "famous_ratio": 7, "is_join": false}]}
+{
+    "Investor": [
+        {
+            "id": 1,
+            "name": "Modern Realty",
+            "email": "Dungphamvan0803@gmail.com",
+            "investor_budget": null,
+            "phone": "512-366-2202",
+            "size": 100,
+            "history_investment": [
+                {
+                    "event": "Sun Flower",
+                    "budget": 1500
+                },
+                {
+                    "event": "Color Me Run",
+                    "budget": 1000
+                }
+            ],
+            "famous_ratio": 5,
+            "is_join": false
+        },
+        {
+            "id": 2,
+            "name": "Pham Van Dung",
+            "email": "IsidroMFuller@armyspy.com",
+            "investor_budget": null,
+            "phone": "580-564-1953",
+            "size": 150,
+            "history_investment": [
+                {
+                    "event": "Run Fast",
+                    "budget": 2000
+                },
+                {
+                    "event": "Fast and Furious",
+                    "budget": 3000
+                }
+            ],
+            "famous_ratio": 6,
+            "is_join": true
+        },
+        {
+            "id": 3,
+            "name": "Thorofare",
+            "email": "DanielACoronado@teleworm.us",
+            "investor_budget": null,
+            "phone": "312-496-4196",
+            "size": 500,
+            "history_investment": [
+                {
+                    "event": "Learn Smart",
+                    "budget": 1500
+                },
+                {
+                    "event": "Hello Daddy",
+                    "budget": 5000
+                },
+                {
+                    "event": "Investment Intelligence",
+                    "budget": 2000
+                }
+            ],
+            "famous_ratio": 8,
+            "is_join": false
+        },
+        {
+            "id": 4,
+            "name": "Mr. Steak",
+            "email": "FilomenaAMay@rhyta.com",
+            "investor_budget": null,
+            "phone": "703-388-6660",
+            "size": 100,
+            "history_investment": [
+                {
+                    "event": "Mastery Trainer Training",
+                    "budget": 2000
+                }
+            ],
+            "famous_ratio": 6,
+            "is_join": false
+        },
+        {
+            "id": 5,
+            "name": "Star Assistance",
+            "email": "MatthewPJones@teleworm.us",
+            "investor_budget": null,
+            "phone": "847-643-8876",
+            "size": 500,
+            "history_investment": [
+                {
+                    "event": "True Love",
+                    "budget": 3000
+                },
+                {
+                    "event": "Met and Greet Dinner Social",
+                    "budget": 2500
+                }
+            ],
+            "famous_ratio": 7,
+            "is_join": false
+        }
+    ]
+}
