@@ -1,11 +1,11 @@
+import datetime
 import smtplib
-from email.MIMEMultipart import MIMEMultipart
-from email.MIMEBase import MIMEBase
-from email.MIMEText import MIMEText
-from email.Utils import COMMASPACE, formatdate
-from email import Encoders
-import os,datetime
+from email import encoders
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
+from email.utils import formatdate
+from email.mime.base import MIMEBase
 CRLF = "\r\n"
 login = "chehaitest@gmail.com"
 password = "Haipro!23"
@@ -52,11 +52,11 @@ def send_invitation(ddtstart, dtoff, target_mem):
 
     ical_atch = MIMEBase('application/ics', ' ;name="%s"' % ("invite.ics"))
     ical_atch.set_payload(ical)
-    Encoders.encode_base64(ical_atch)
+    encoders.encode_base64(ical_atch)
     ical_atch.add_header('Content-Disposition', 'attachment; filename="%s"' % ("invite.ics"))
 
     eml_atch = MIMEBase('text/plain', '')
-    Encoders.encode_base64(eml_atch)
+    encoders.encode_base64(eml_atch)
     eml_atch.add_header('Content-Transfer-Encoding', "")
 
     msgAlternative.attach(part_email)
@@ -69,7 +69,7 @@ def send_invitation(ddtstart, dtoff, target_mem):
     mailServer.login(login, password)
     mailServer.sendmail(fro, target_mem, msg.as_string())
     mailServer.close()
-    return "Done send invitation"
+    return True
 
 def send_content(content, target_mem):
     msg = MIMEMultipart()
@@ -88,7 +88,7 @@ def send_content(content, target_mem):
     mailServer.sendmail(fro, target_mem, msg.as_string())
 
     mailServer.quit()
-    return "Done send message to %s" %target_mem
+    return True
 
 # def send_reminder()
 
