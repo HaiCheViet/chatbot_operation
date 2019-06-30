@@ -2,8 +2,8 @@
     "Investor": [
         {
             "id": 1,
-            "name": "Modern Realty",
-            "email": "JamesNTucker@rhyta.com",
+            "name": "Trinh Van Quyet",
+            "email": "quyettnaloha@rhyta.com",
             "investor_budget" : 2000,
             "phone" : "512-366-2202",
             "size" : 100,
@@ -22,8 +22,8 @@
         },
         {
             "id": 2,
-            "name": "Integra Investment Plan",
-            "email": "IsidroMFuller@armyspy.com",
+            "name": "F1 Technology",
+            "email": "f1coltd.org@armyspy.com",
             "investor_budget" : 1000,
             "phone" : "580-564-1953",
             "size" : 150,
@@ -42,8 +42,8 @@
         },
         {
             "id": 3,
-            "name": "Thorofare",
-            "email": "DanielACoronado@teleworm.us",
+            "name": "Humanoid Perspective",
+            "email": "humanoid@perspective.vn",
             "investor_budget" : 4000,
             "phone" : "312-496-4196",
             "size" : 500,
@@ -66,8 +66,8 @@
         },
         {
             "id": 4,
-            "name": "Mr. Steak",
-            "email": "FilomenaAMay@rhyta.com",
+            "name": "Alan Phan Van",
+            "email": "alnphan@mail.com",
             "investor_budget" : 1500,
             "phone" : "703-388-6660",
             "size" : 100,
@@ -84,7 +84,7 @@
         {
             "id": 5,
             "name": "Star Assistance",
-            "email": "MatthewPJones@teleworm.us",
+            "email": "mathmoon@atart.us",
             "investor_budget" : 5000,
             "phone" : "847-643-8876",
             "size" : 500,
