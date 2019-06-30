@@ -15,10 +15,11 @@ class HandleIntent(object):
             response = json.load(f)
         response = response['response'][entity]
         shuffle(response)
-        return response[0] + "\n"
+        return response[0]
 
     def handle_info(self):
-        if self.intent == ""
+        if self.intent == "":
+            pass
         return self.select_response("add_info") + f" {self.para['name']}"
 
     # def sent_mail(self):
