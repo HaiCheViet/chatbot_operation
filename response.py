@@ -10,90 +10,38 @@ class SlackResponse(object):
         if len(texts) <= 0:
             raise Exception("Provide the text for the text response")
         else:
-            # text_obj list for storing the text variations
-            text_obj = []
-            for text in texts:
-                text_obj.append(str(text))
+            return {"payload": {"slack": {"text": texts}}}
 
-            # return the text response
-            return {
-                "text": {
-                    "text": text_obj
-                },
-                "platform": self.platform
-            }
-
-    def message_buttons(self, texts, attachment):
+    def message_buttons(self, texts, chips: list):
         if len(texts) <= 0:
             raise Exception("Provide the text for the text response")
-        else:
+        else:                
             attachments = [
                 {
                     "text": f"{texts}",
                     "fallback": "Choose another options out of offer",
-                    "callback_id": "wopr_game",
+                    "callback_id": "",
                     "color": "#3AA3E3",
                     "attachment_type": "default",
                     "actions": [
                     ]
                 }
             ]
-            for i in attachments:
+            for i in chips:
                 temp = {
                     "name": "options",
-                    "text": i["text"],
+                    "text": i,
                     "type": "button",
-                    "value": i["value"],
+                    "value": i,
                 }
                 attachments[0]['actions'].append(temp)
-        return {
-            "text": texts,
-            "attachments": attachments
-        }
-
-    def quick_replies(self, title, quick_replies_list):
-        if title == "":
-            raise Exception("Title is required for basic card in facebook.")
-        # quick_replies_list must contains at least one string
-        elif len(quick_replies_list) <= 0:
-            raise Exception(
-                "Quick replies response must contain at least on text string.")
-        else:
-            # quick replies list to store the quick replie text
-            quick_replies = []
-            for quick_reply in quick_replies_list:
-                # append to the list
-                quick_replies.append(
-                    str(quick_reply)
-                )
-
-            # return the response JSON
-            return {
-                "quickReplies": {
-                    "title": str(title),
-                    "quickReplies": quick_replies
-                },
-                "platform": self.platform
-            }
-
-    def card_response(self, title, buttons):
-        buttons_json = []
-        for button in buttons:
-            buttons_json.append(
-                {
-                    "text": str(button[0]),
-                    "postback": str(button[1])
+        return {"payload": {"slack": {
+                                    "text": texts,
+                                    "attachments": attachments
+                                    }
+                            }
                 }
-            )
 
-        # return the card
-        return {
-            "card": {
-                "title": str(title),
-                "buttons": buttons_json
-            },
-            "platform": self.platform
-        }
 
 # dialogflow fulfillment response
 class fulfillment_response():

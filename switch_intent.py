@@ -18,7 +18,8 @@ class HandleIntent(object):
         return response[0] + "\n"
 
     def handle_info(self):
-        if self.intent == ""
+        if self.intent == "":
+            pass
         return self.select_response("add_info") + f" {self.para['name']}"
 
     # def sent_mail(self):

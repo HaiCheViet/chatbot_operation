@@ -1,11 +1,11 @@
+import datetime
 import smtplib
-from email.MIMEMultipart import MIMEMultipart
-from email.MIMEBase import MIMEBase
-from email.MIMEText import MIMEText
-from email.Utils import COMMASPACE, formatdate
-from email import Encoders
-import os,datetime
+from email import encoders
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
+from email.utils import formatdate
+from email.mime.base import MIMEBase
 CRLF = "\r\n"
 login = "chehaitest@gmail.com"
 password = "Haipro!23"
@@ -14,10 +14,12 @@ organizer = "ORGANIZER;CN=organiser:mailto:first" + CRLF + " @gmail.com"
 fro = "haitest che <chehaitest@gmail.com>"
 
 
-def send_invitation(ddtstart, dtoff, target_mem):
+def send_invitation(target_mem):
     # ddtstart = datetime.datetime.now()
     # dtoff = datetime.timedelta(days=1)
-    dur = datetime.timedelta(hours=1)
+    ddtstart = datetime.datetime.now()
+    dtoff = datetime.timedelta(days = 1)
+    dur = datetime.timedelta(hours = 1)
     ddtstart = ddtstart + dtoff
     dtend = ddtstart + dur
     dtstamp = datetime.datetime.now().strftime("%Y%m%dT%H%M%SZ")
@@ -52,11 +54,11 @@ def send_invitation(ddtstart, dtoff, target_mem):
 
     ical_atch = MIMEBase('application/ics', ' ;name="%s"' % ("invite.ics"))
     ical_atch.set_payload(ical)
-    Encoders.encode_base64(ical_atch)
+    encoders.encode_base64(ical_atch)
     ical_atch.add_header('Content-Disposition', 'attachment; filename="%s"' % ("invite.ics"))
 
     eml_atch = MIMEBase('text/plain', '')
-    Encoders.encode_base64(eml_atch)
+    encoders.encode_base64(eml_atch)
     eml_atch.add_header('Content-Transfer-Encoding', "")
 
     msgAlternative.attach(part_email)

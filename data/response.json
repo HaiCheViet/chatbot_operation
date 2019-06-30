@@ -6,7 +6,8 @@
         ],
         "add_info":[
             "You've add",
-            "Successfully add"
+            "Successfully add",
+            "added {name} to {group} group"
         ],
         "joking":[
             "Tình yêu như 2 đứa cùng ngậm sợi dây chun. Đứa này thả, đứa kia vỡ mồm.",

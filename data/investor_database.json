@@ -1,107 +1,97 @@
-{
-    "Investor": [
-        {
-            "id": 1,
-            "name": "Modern Realty",
-            "email": "JamesNTucker@rhyta.com",
-            "investor_budget" : 2000,
-            "phone" : "512-366-2202",
-            "size" : 100,
-            "history_investment": [
-                {
-                    "event": "Sun Flower",
-                    "budget" : 1500
-                },
-                {
-                    "event": "Color Me Run",
-                    "budget" : 100
-                }
-            ],
-            "famous_ratio" : 5
-
-        },
-        {
-            "id": 2,
-            "name": "Integra Investment Plan",
-            "email": "IsidroMFuller@armyspy.com",
-            "investor_budget" : 1000,
-            "phone" : "580-564-1953",
-            "size" : 150,
-            "history_investment": [
-                {
-                    "event": "Run Fast",
-                    "budget" : 2000
-                },
-                {
-                    "event": "Fast and Furious",
-                    "budget" : 3000
-                }
-            ],
-            "famous_ratio" : 6
-
-        },
-        {
-            "id": 3,
-            "name": "Thorofare",
-            "email": "DanielACoronado@teleworm.us",
-            "investor_budget" : 4000,
-            "phone" : "312-496-4196",
-            "size" : 500,
-            "history_investment": [
-                {
-                    "event": "Learn Smart",
-                    "budget" : 1500
-                },
-                {
-                    "event": "Hello Daddy",
-                    "budget" : 5000
-                },
-                {
-                    "event": "Investment Intelligence",
-                    "budget" : 2000
-                }
-            ],
-            "famous_ratio" : 8
-
-        },
-        {
-            "id": 4,
-            "name": "Mr. Steak",
-            "email": "FilomenaAMay@rhyta.com",
-            "investor_budget" : 1500,
-            "phone" : "703-388-6660",
-            "size" : 100,
-            "history_investment": [
-                {
-                    "event": "Mastery Trainer Training",
-                    "budget" : 2000
-                }
-               
-            ],
-            "famous_ratio" : 6
-
-        },
-        {
-            "id": 5,
-            "name": "Star Assistance",
-            "email": "MatthewPJones@teleworm.us",
-            "investor_budget" : 5000,
-            "phone" : "847-643-8876",
-            "size" : 500,
-            "history_investment": [
-                {
-                    "event": "True Love",
-                    "budget" : 3000
-                },
-                {
-                    "event": "Met and Greet Dinner Social",
-                    "budget" : 2500
-                }
-            ],
-            "famous_ratio" : 7
-
-        }
-
-    ]
-    
-}
+[
+    {
+        "id": 1,
+        "name": "Modern Realty",
+        "email": "JamesNTucker@rhyta.com",
+        "investor_budget": 2000,
+        "phone": "512-366-2202",
+        "size": 100,
+        "history_investment": [
+            {
+                "event": "Sun Flower",
+                "budget": 1500
+            },
+            {
+                "event": "Color Me Run",
+                "budget": 100
+            }
+        ],
+        "famous_ratio": 5
+    },
+    {
+        "id": 2,
+        "name": "Integra Investment Plan",
+        "email": "IsidroMFuller@armyspy.com",
+        "investor_budget": 1000,
+        "phone": "580-564-1953",
+        "size": 150,
+        "history_investment": [
+            {
+                "event": "Run Fast",
+                "budget": 2000
+            },
+            {
+                "event": "Fast and Furious",
+                "budget": 3000
+            }
+        ],
+        "famous_ratio": 6
+    },
+    {
+        "id": 3,
+        "name": "Thorofare",
+        "email": "DanielACoronado@teleworm.us",
+        "investor_budget": 4000,
+        "phone": "312-496-4196",
+        "size": 500,
+        "history_investment": [
+            {
+                "event": "Learn Smart",
+                "budget": 1500
+            },
+            {
+                "event": "Hello Daddy",
+                "budget": 5000
+            },
+            {
+                "event": "Investment Intelligence",
+                "budget": 2000
+            }
+        ],
+        "famous_ratio": 8
+    },
+    {
+        "id": 4,
+        "name": "Mr. Steak",
+        "email": "FilomenaAMay@rhyta.com",
+        "investor_budget": 1500,
+        "phone": "703-388-6660",
+        "size": 100,
+        "history_investment": [
+            {
+                "event": "Mastery Trainer Training",
+                "budget": 2000
+            }
+        ],
+        "famous_ratio": 6
+    },
+    {
+        "id": 5,
+        "name": "Star Assistance",
+        "email": "MatthewPJones@teleworm.us",
+        "investor_budget": 5000,
+        "phone": "847-643-8876",
+        "size": 500,
+        "history_investment": [
+            {
+                "event": "True Love",
+                "budget": 3000
+            },
+            {
+                "event": "Met and Greet Dinner Social",
+                "budget": 2500
+            }
+        ],
+        "famous_ratio": 7
+    }
+]

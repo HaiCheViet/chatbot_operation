@@ -4,6 +4,9 @@ import response
 import query_answer
 import switch_intent
 from flask import Flask, request, make_response, jsonify
+from query.query_investor import QueryInvestor
+
+import handle_action
 
 app = Flask(__name__)
 log = app.logger
@@ -26,10 +29,13 @@ def webhook():
     para = req.get('queryResult').get('parameters')
 
     fulfillment = response.fulfillment_response()
-    Slack = response.SlackResponse()
-    if action == 'setup':
+    slack = response.SlackResponse()
 
-        pass
+    handle = handle_action.HandleAction(para)
+    if action == 'setup':
+        text = 'Hi! Can I help you ?'
+        button = ['setup', 'send mail', 'add info', 'show place']
+        reply = slack.message_buttons(text, button)
     
     elif action == 'send_mail':
         '''
@@ -37,8 +43,9 @@ def webhook():
                 rule: [content, appointment, reminder]
                 (mail): mail
         '''
-        if para['mail'] == '':
+        if para['mail'] != '':
             # send mail to one person
+
             pass
         else:
             # send mail to a group
@@ -48,64 +55,63 @@ def webhook():
         '''
         @para:  rule: [member, investor]
                 (name): name
-        '''
-        if para['name'] == '' and para['rule'] == 'member':
-            # add member from csv file (get from google sheet)            
-            pass
-        elif para['name'] == '' and para['rule'] == 'investor':
-            # request name of investor
-            # response context  investor_follow
-            pass
-        elif para['name'] =! '' and para['rule'] == 'member':
-            # request slot for member
-            # response context member_follow
-            pass
-        else:
-            # reply done
-            pass
+        '''        
+        # if para['name'] == '' and para['rule'] == 'member':
+        #     # add member from csv file (get from google sheet)         
+        #     pass
+        # elif para['name'] == '' and para['rule'] == 'investor':
+        #     # request name of investor
+        #     # response context  investor_follow
+        #     pass
+        # elif para['name'] != '' and para['rule'] == 'member':
+        #     # request slot for member
+        #     # response context member_follow
+        #     pass
+        # else:
+        #     # reply done
+        #     pass
+        text = handle.add_info()
+        reply = slack.text_response(text)
 
-    elif action == 'add_info_investor':
-        # add to database
-        # reply done
-        pass
+    # elif action == 'add_info_investor':
+    #     # add to database
+    #     # reply done
+    #     pass
 
-    elif action == 'add_info_member':
-        # add to database
-        # reply done
+    # elif action == 'add_info_member':
+    #     # add to database
+    #     # reply done
         
 
-        pass
+    #     pass
 
     elif action == 'show_investor':
-        from query.query_investor import QueryInvestor
+        investor = QueryInvestor()
         if para['rule'] == 'rank':
             # show investor by rank
-            mess = query.query_investor_by_famous()
+            reply = investor.query_investor_by_famous()
             
         elif para['rule'] == 'amount':
             # show investor by amount
-            mess = query.query_investor_by_budget()
+            reply = investor.query_investor_by_budget()
             
         elif para['rule'] == 'info' and para['organizer'] != '' :
             # show info investor
-            mess = query.query_investor_by_name(para["organizer"])
+            reply = investor.query_investor_by_name(para["organizer"])
             
         else:
             # reply: what do you want to show?
-            mess = {}
+            reply = "sorry"
     elif action == 'show_place':
-        mess = query_answer.handle_mess_place()
+        reply = query_answer.handle_mess_place()
     
 
-    pprint(req)
-    print(intent)
+    # pprint(req)
+    # print(intent)
 
-    list_sequence.append(intent)
-    if intent == "query_investor_intent"
-        return
 
-    resp = {"fulfillmentText": "hello"}
-    return make_response(jsonify(resp))
+    # pprint(reply)
+    return make_response(jsonify(reply))
     # print(intent)
 
 
