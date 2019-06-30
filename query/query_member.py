@@ -36,7 +36,9 @@ class QueryMember(object):
     
     def update_all_after_confirm(self):
         with open("./data/member_database.json", "w", encoding="utf-8") as f:
-           json.dump(self.data, f)
+            new_data = {"Member": self.data}
+            json.dump(new_data, f)
+        #    json.dump(self.data, f)
 if __name__ == "__main__":
     query =  QueryMember()
     query.update_all_after_confirm()

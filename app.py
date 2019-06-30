@@ -1,5 +1,6 @@
 from pprint import pprint
 
+import json
 import random
 import response
 import query_answer
@@ -19,6 +20,21 @@ list_sequence = []
 def home():
     return make_response(jsonify('Hello, Nice to meet you!'))
 
+def recommend_operation(list_sequence):
+    list_of_recommend_task = []
+    if len(list_sequence) == 1:
+        return []
+    with open("data/recommend.json", "r") as f:
+        recommend = json.load(f)
+    # print(recommend)
+    for k in recommend.keys():
+        if list_sequence == recommend[k][0:len(list_sequence)]:
+            if len(list_sequence) == len(recommend[k]):
+                return f"Finish sequence {recommend[k]}"
+
+            list_of_recommend_task.append({k: recommend[k][len(list_sequence)]})
+    return list_of_recommend_task
+
 
 @app.route('/webhook/', methods=['GET', 'POST'])
 def webhook():
@@ -26,17 +42,22 @@ def webhook():
     req = request.get_json(force=True)
     # get action from json
     action = req.get('queryResult').get('action')
-    intent = req.get('queryResult').get('intent')["displayName"]
+    # intent = req.get('queryResult').get('intent')["displayName"]
     para = req.get('queryResult').get('parameters')
+    list_sequence.append(action)
 
-    fulfillment = response.fulfillment_response()
+    # fulfillment = response.fulfillment_response()
     slack = response.SlackResponse()
+
+    list_recommend_task = recommend_operation(list_sequence)
 
     handle = handle_action.HandleAction(para)
     if action == 'setup':
-        text = 'Hi! Can I help you ?'
-        button = ['setup', 'send mail', 'add info', 'show place']
-        reply = slack.message_buttons(text, button)
+        text = 'Hi! Can I help you? \n You can follow one of these operations'
+        button = slack.message_buttons(["send mail to council group", 'add info', "sent mail appointment to council group"])
+        seq = slack.recommend_seq(list_recommend_task)
+
+        reply = slack.response(text, button, seq)
     
     elif action == 'send_mail':
         '''
@@ -57,20 +78,15 @@ def webhook():
 
         #     elif para['typeofperson'] == 'investor':
         #         # send mail to a person or people of member group
-        
-        result = handle.send_mail(*para)
+        result = handle.send_mail()
         if result:
             text = handle.select_response('send_mail')
-            reply = slack.text_response(text)
-        else: reply = slack.text_response("I missed it")
+            seq = slack.recommend_seq(list_recommend_task)
+            reply = slack.response(text, seq=seq)
+            print(reply)
+
+        else: reply = slack.text_response("Sorry, I missed it")
                        
-            
-
-
-        else:
-            text = handle_intent.switch_intent()
-            reply = slack.text_response(text)
-            # send mail to a group
 
     elif action == 'add_info':
         '''
@@ -92,7 +108,8 @@ def webhook():
         #     # reply done
         #     pass
         text = handle.add_info()
-        reply = slack.text_response(text)
+        seq = slack.recommend_seq(list_recommend_task)
+        reply = slack.response(text, seq=seq)
 
     # elif action == 'add_info_investor':
     #     # add to database
@@ -110,30 +127,39 @@ def webhook():
         investor = QueryInvestor()
         if para['rule'] == 'rank':
             # show investor by rank
-            reply = investor.query_investor_by_famous()
+            text = investor.query_investor_by_famous()
+            seq = slack.recommend_seq(list_recommend_task)
+            reply = slack.response(text, seq=seq)
             
         elif para['rule'] == 'amount':
             # show investor by amount
-            reply = investor.query_investor_by_budget()
+            text = investor.query_investor_by_budget()
+            seq = slack.recommend_seq(list_recommend_task)
+            reply = slack.response(text, seq=seq)
             
         elif para['rule'] == 'info' and para['organizer'] != '' :
             # show info investor
-            reply = investor.query_investor_by_name(para["organizer"])
+            text = investor.query_investor_by_name(para["organizer"])
+            seq = slack.recommend_seq(list_recommend_task)
+            reply = slack.response(text, seq=seq)
             
         else:
             # reply: what do you want to show?
             reply = "sorry"
     elif action == 'show_place':
-        reply = query_answer.handle_mess_place()
+        text = query_answer.handle_mess_place(para)
+        seq = slack.recommend_seq(list_recommend_task)
+        reply = slack.response(text, seq=seq)
+        # reply = slack.text_response(str(text))
+
+        
     
-
-    # pprint(req)
-    # print(intent)
-
+    
 
     # pprint(reply)
     return make_response(jsonify(reply))
     # print(intent)
+
 
 
 if __name__ == "__main__":

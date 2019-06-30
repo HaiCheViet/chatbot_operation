@@ -1,0 +1,31 @@
+{
+  "dialog_create_council": [
+    "send mail to council group",
+    "add info",
+    "sent mail appointment to council group",
+    "show me the investor by amount"
+  ],
+  "dialog_investor": [
+    "show me the investor by amount",
+    "send mail to investor",
+    "add info",
+    "send mail to investor and council group",
+    "send mail"
+  ],
+  "dialog_member": [
+    "query_location_intent",
+    "sent_mail",
+    "sent_mail",
+    "add_info",
+    "sent_mail",
+    "sent_mail"
+  ],
+  "dialog_place": [
+    "query_platform_intent",
+    "sent_mail",
+    "sent_mail",
+    "add_info",
+    "sent_mail",
+    "sent_mail"
+  ]
+}

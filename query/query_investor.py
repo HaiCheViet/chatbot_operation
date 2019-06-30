@@ -56,7 +56,8 @@ class QueryInvestor(object):
     
     def update_all_after_confirm(self):
         with open("data/investor_database.json", "w", encoding="utf-8") as f:
-            json.dump(self.data, f)
+            new_data = {"Investor": self.data}
+            json.dump(new_data, f)
 
 
 

@@ -4,45 +4,64 @@ class SlackResponse(object):
     # class variable initializer initializer
     def __init__(self):
         self.platform = "slack"
+    @staticmethod
+    def response(text, button=[], seq=[]):
+        
+        return {"payload": {"slack": {"text": text, "attachments": button + seq}}}
 
     def text_response(self, texts):
         # text should contain at least one string
         if len(texts) <= 0:
             raise Exception("Provide the text for the text response")
         else:
-            return {"payload": {"slack": {"text": texts}}}
+            return texts
 
-    def message_buttons(self, texts, chips: list):
-        if len(texts) <= 0:
-            raise Exception("Provide the text for the text response")
-        else:                
-            attachments = [
-                {
-                    "text": f"{texts}",
-                    "fallback": "Choose another options out of offer",
-                    "callback_id": "",
-                    "color": "#3AA3E3",
-                    "attachment_type": "default",
-                    "actions": [
+    def message_buttons(self, chips: list):
+                        
+        attachments = [
+            {
+                "text": "",
+                "fallback": "Choose another options out of offer",
+                "callback_id": "1",
+                "color": "#3AA3E3",
+                "attachment_type": "default",
+                "actions": [
+                ]
+            }
+        ]
+        for i in chips:
+            temp = {
+                "name": "options",
+                "text": i,
+                "type": "button",
+                "value": i,
+            }
+            attachments[0]['actions'].append(temp)
+        return attachments
+        
+    def recommend_seq(self, seq: list):
+
+        attachments = [
+            {
+            "fallback": "Required plain-text summary of the attachment.",
+            "color": "#36a64f",
+            # "author_name": f"{texts}",
+            "text": "Recommend next operations in sequence task",
+            "fields": [            
                     ]
-                }
-            ]
-            for i in chips:
+            }
+        ]
+
+        for i in seq:
+            for key, value in i.items():
                 temp = {
-                    "name": "options",
-                    "text": i,
-                    "type": "button",
-                    "value": i,
-                }
-                attachments[0]['actions'].append(temp)
-        return {"payload": {"slack": {
-                                    "text": texts,
-                                    "attachments": attachments
-                                    }
-                            }
-                }
-
-
+                        "title": key,
+                        "value": value,
+                        "short": False
+                    }
+                attachments[0]["fields"].append(temp)
+        
+        return attachments
 # dialogflow fulfillment response
 class fulfillment_response():
 

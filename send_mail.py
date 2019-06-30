@@ -69,7 +69,7 @@ def send_invitation(ddtstart, dtoff, target_mem):
     mailServer.login(login, password)
     mailServer.sendmail(fro, target_mem, msg.as_string())
     mailServer.close()
-    return "Done send invitation"
+    return True
 
 def send_content(content, target_mem):
     msg = MIMEMultipart()
@@ -88,7 +88,7 @@ def send_content(content, target_mem):
     mailServer.sendmail(fro, target_mem, msg.as_string())
 
     mailServer.quit()
-    return "Done send message to %s" %target_mem
+    return True
 
 # def send_reminder()
 
